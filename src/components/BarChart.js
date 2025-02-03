@@ -1,5 +1,7 @@
+// src/components/BarChart.js
 import React, { useEffect, useState } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+import "./BarChart.css"; // Add a CSS file for styling
 
 const BarChartComponent = ({ count }) => {
   const [data, setData] = useState([]);
@@ -9,8 +11,7 @@ const BarChartComponent = ({ count }) => {
   }, [count]);
 
   return (
-    <div>
-      <h2>Bar Chart</h2>
+    <div className="bar-chart-container">
       <BarChart width={500} height={300} data={data}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />

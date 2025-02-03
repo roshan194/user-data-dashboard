@@ -1,4 +1,6 @@
+// src/components/UserForm.js
 import React, { useState, useEffect } from "react";
+import "./UserForm.css"; // Add a CSS file for styling
 
 const UserForm = ({ userData, setUserData }) => {
   const [formData, setFormData] = useState(userData);
@@ -38,17 +40,14 @@ const UserForm = ({ userData, setUserData }) => {
   }, [isDirty]);
 
   return (
-    <div>
-      <h2>User Form</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} />
-        <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} />
-        <input type="tel" name="phone" placeholder="Phone" value={formData.phone} onChange={handleChange} />
-        <input type="text" name="address" placeholder="Address" value={formData.address} onChange={handleChange} />
-        <button type="submit">Save</button>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-      </form>
-    </div>
+    <form onSubmit={handleSubmit} className="user-form">
+      <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} />
+      <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} />
+      <input type="tel" name="phone" placeholder="Phone" value={formData.phone} onChange={handleChange} />
+      <input type="text" name="address" placeholder="Address" value={formData.address} onChange={handleChange} />
+      <button type="submit">Save</button>
+      {error && <p className="error-message">{error}</p>}
+    </form>
   );
 };
 
