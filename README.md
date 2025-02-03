@@ -40,3 +40,47 @@ Follow these steps to set up and run the project locally.
    ```bash
    git clone https://github.com/your-username/user-data-dashboard.git
    cd user-data-dashboard
+   
+2. Install dependencies:
+   ```bash
+   npm install
+
+3. Set up Clerk:
+   
+   * Sign up at Clerk and create a new application.
+
+   * Add your Clerk publishable key to a .env file:
+      ```env
+     REACT_APP_CLERK_PUBLISHABLE_KEY=your_publishable_key
+
+4. Start the development server:
+   ```bash
+   npm start
+   
+5. Open your browser and navigate to http://localhost:3000.
+
+### Project Structure
+user-data-dashboard/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── AuthPage.js
+│   │   ├── Dashboard.js
+│   │   ├── Counter.js
+│   │   ├── RichTextEditor.js
+│   │   ├── UserForm.js
+│   │   └── BarChart.js
+│   ├── App.js
+│   ├── index.js
+│   └── styles/
+│       ├── App.css
+│       ├── Dashboard.css
+│       ├── Counter.css
+│       ├── UserForm.css
+│       └── BarChart.css
+├── .env
+├── package.json
+├── package-lock.json
+└── README.md
+   
